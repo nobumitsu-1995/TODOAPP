@@ -1,6 +1,6 @@
 class CompletionsController < ApplicationController
   before_action :check_login
-  before_action :check_user_completion , {only:[:return, :show, :delete, :complete]}
+  before_action :check_user_completion , {only:[:return, :show, :delete]}
 
   def index
     @completions = Completion.where(user_id:@current_user.id).order(created_at: :desc)

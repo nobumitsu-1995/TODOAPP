@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(name:params[:name],
                         email:params[:email],
-                        password:params[:password],
+                        password:params[:password_digest],
                         img:"default_image.jpeg")
     @user.save
     if @user.save
@@ -28,14 +28,14 @@ class UsersController < ApplicationController
 
   def login
     @user = User.find_by(email:params[:email])
-    if @user && @user.authenticate(params[:password])
+    if @user && @user.authenticate(params[:password_digest])
       session[:user_id] = @user.id
       flash[:notice]
       redirect_to("/posts/index")
     else
       @error_message = "ログイン情報が正しくありません"
       @email = params[:email]
-      @password = params[:password]
+      @password_digest = params[:password_digest]
       render("users/login_form")
     end
   end
