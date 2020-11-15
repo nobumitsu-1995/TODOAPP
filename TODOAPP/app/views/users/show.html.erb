@@ -1,0 +1,18 @@
+<div class="containar3">
+  <div class="user_img">
+    <img src="<%= "/user_image/#{@user.img}" %>" class="img">
+  </div>
+  <div class="user_name">
+    ユーザー名：<%= @user.name %>
+  </div>
+  <div class="user_number">
+    ユーザー番号：<%= @user.id %>
+  </div>
+  <div class="user_created">
+    ユーザー登録日：<%= @user.created_at.strftime("%Y-%m-%d") %>
+  </div>
+  <ul class="user_menu">
+    <li><%= link_to("編集","/users/#{@user.id}/edit") %></li>
+    <li><%= link_to("削除","/users/#{@user.id}/delete",{method:"post"}) %></li>
+  </ul>
+</div>

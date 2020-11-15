@@ -1,0 +1,15 @@
+<div class="containar2">
+  <h1>Edit.</h1>
+    <%= form_tag("/posts/#{@post.id}/update") do %>
+    <% @post.errors.full_messages.each do |message| %>
+      <div class="error-message">
+        <%= message %>
+      </div>
+    <% end %>
+    <p>〇締め切り</p>
+    <input type="datetime-local" name="deadline" class="deadline">
+    <p>〇やること</p>
+    <textarea class="text" name="content" ><%= @post.content %></textarea>
+    <input class="btn" type="submit" value="更新">
+    <% end %>
+</div>

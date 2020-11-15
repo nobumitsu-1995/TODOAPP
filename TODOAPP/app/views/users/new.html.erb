@@ -1,0 +1,23 @@
+<div class="containar2">
+  <h1>Create User.</h1>
+  <div class="create_user">
+    <%= form_tag("/users/create") do %>
+    <% if @user.errors.full_messages %>
+      <% @user.errors.full_messages.each do |message| %>
+        <div class="error-message">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+      <p>ユーザー名</p>
+      <input type="text" name="name">
+      <p>メールアドレス</p>
+      <input type="text" name="email">
+      <p>パスワード</p>
+      <input type="password" name="password">
+      <div>
+        <input class="btn go" type="submit" value="登録">
+      </div>
+    <% end %>
+  </div>
+</div>

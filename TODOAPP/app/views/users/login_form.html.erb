@@ -1,0 +1,19 @@
+<div class="containar2">
+  <h1>Login Form.</h1>
+  <div class="create_user">
+    <%= form_tag("/users/login") do %>
+    <% if @error_message %>
+      <div class="error-message">
+        <%= @error_message %>
+      </div>
+    <% end %>
+      <p>メールアドレス</p>
+      <input type="text" name="email" value="<%= @email %>">
+      <p>パスワード</p>
+      <input type="password" name="password" value="<%= @password %>">
+      <div class="">
+        <input class="btn go" type="submit" name="" value="ログイン">
+      </div>
+    <% end %>
+  </div>
+</div>

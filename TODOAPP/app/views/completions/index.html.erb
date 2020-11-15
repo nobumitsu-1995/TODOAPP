@@ -1,0 +1,32 @@
+<h1>TODO LIST</h1>
+<div class="clock-body">
+  <div class="container-clock">
+    <div id="day"></div>
+    <div id="time"></div>
+  </div>
+</div>
+<div class="create">
+  <%= link_to('create new','/posts/new') %>
+</div>
+<div class="tab">
+  <%= link_to("締め切りあり","/posts/index", {class: "clear"}) %>
+  <%= link_to("締め切りなし","/posts/index_none", {class: "clear"}) %>
+  <%= link_to("締め切り超過","/posts/index_over", {class: "clear"}) %>
+  <%= link_to("完了済みタスク","/completions/index") %>
+</div>
+<table class="todo">
+  <tr>
+    <th class="th1">完了日時</th><th>やったこと</th><th class="th4">操作</th>
+  </tr>
+  <% @completions.each do |completion| %>
+      <tr>
+        <td><%= completion.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+        <td class="td3"><%= link_to(completion.content,"/completions/#{completion.id}") %></td>
+        <td class="td4">
+          <%= link_to("元に戻す","/completions/#{completion.id}/return",{method:"post"}) %>
+          <%= link_to("削除","/completions/#{completion.id}/delete",{method:"post"}) %>
+        </td>
+      </tr>
+  <% end %>
+</table>
+<%= javascript_pack_tag 'posts/index' %>

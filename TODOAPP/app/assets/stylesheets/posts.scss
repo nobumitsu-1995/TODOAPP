@@ -1,0 +1,192 @@
+/*posts index clock*/
+.clock-body{
+  font-family: 'monospace';
+  font-weight: bold;
+  color: #333;
+  margin: 20px 0;
+}
+#day{
+  background: #aaa;
+  width: 120px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border: 4px solid #777;
+  margin-right: 5px;
+}
+#time{
+  background: #aaa;
+  width: 60px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border: 4px solid #777;
+}
+.container-clock{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000080;
+  height: 50px;
+  width: 220px;
+  margin: 0 auto;
+}
+
+/* posts index */
+
+h1{
+  height: 30px;
+  width: 300px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+.tab{
+  width: 1000px;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  margin-top: 30px;
+  border-radius: 20px 20px 0 0;
+}
+.tab a{
+  width: 250px;
+  color: #fff;
+  font-weight: bold;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 20px 20px 0 0;
+  background: #f0823d;
+}
+.clear{
+  background: #FF9872;
+  opacity: 0.5;
+}
+.create{
+  width: 1000px;
+  margin: 10px auto;
+}
+.create a{
+  background: #FF3366;
+  padding: 10px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+}
+.create a:hover{
+  opacity: 0.8;
+}
+.todo{
+  width: 1000px;
+  margin: 0 auto;
+  border: 5px solid #f0823d;
+  background: #fff;
+  padding: 0px 5px;
+  margin-bottom: 50px;
+}
+.todo a{
+  color: black;
+}
+.todo th , .todo td{
+  border: 0.5px solid #f0823d;
+}
+.todo td {
+  text-align: center;
+  padding: 10px 10px;
+}
+.th1{
+  width: 200px;
+}
+.th2{
+  width: 80px;
+}
+.th4{
+  width: 150px;
+}
+.td3{
+  font-weight: bold;
+}
+.td4{
+  text-decoration: underline;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* posts new */
+
+form{
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 20px;
+  text-align: center;
+  border: 5px solid #aaa;
+  background: #eee;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.text{
+  width: 580px;
+  height: 100px;
+  margin:0 10px 10px 10px;
+  font-size: 13px;
+}
+.btn{
+  color: #eee;
+  padding: 10px 30px;
+  font-size: 15px;
+  font-weight: bold;
+  background: #f0823d;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  cursor: pointer;
+  float: right;
+}
+.btn:hover{
+  opacity: 0.8;
+}
+
+/* posts show */
+.show{
+  width: 600px;
+  margin: 20px auto;
+  border: 5px solid #f0823d;
+  background: #fff;
+  padding: 15px;
+  border-radius: 15px;
+}
+.show p {
+  text-align: center;
+  padding: 10px 10px;
+  border: 1px solid #F8E0DE;
+  border-radius: 5px;
+}
+.deadline{
+  margin-bottom: 15px;
+}
+.show-menu{
+  overflow: hidden;
+  font-size: 14px;
+  opacity: 0.6;
+}
+.show-menu li{
+  display: inline;
+  list-style:none;
+  float: right;
+  margin-left: 5px;
+}
+.error-message{
+  color: red;
+}
+.deadline{
+  display: flex;
+  justify-content: space-around;
+}
+.deadline-time{
+  background: #f0823d;
+  padding: 10px 20px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 25px;
+}

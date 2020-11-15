@@ -1,0 +1,31 @@
+<div class="show">
+  <div class="deadline">
+    <div class="deadline-time">
+      完了時間：<%= @completion.created_at.strftime("%Y-%m-%d %H:%M") %>
+    </div>
+  </div>
+  <div class="deadline">
+    <div class="deadline-time">
+      開始時間：<%= @completion.starttime.strftime("%Y-%m-%d %H:%M") %>
+    </div>
+    <div class="deadline-time">
+      作業時間：<%= @workingHour %>
+    </div>
+  </div>
+  <% if @completion.deadline %>
+    <div class="deadline">
+      <div class="deadline-time">
+        締め切り：<%= @completion.deadline.strftime("%Y-%m-%d %H:%M") %>
+      </div>
+      <div class="deadline-time">
+        締め切り<%= @timeFromDeadline %>
+      </div>
+    </div>
+  <% end %>
+  <p><%= @completion.content %></p>
+  <ul class="show-menu cf">
+    <li><%= link_to("削除","/completions/#{@completion.id}/delete",{method:"post"}) %></li>
+    <li><%= link_to("元に戻す","/completions/#{@completion.id}/return",{method:"post"}) %></li>
+    <li><%= @completion.created_at.strftime("%Y-%m-%d %H:%M") %></li>
+  </ul>
+</div>

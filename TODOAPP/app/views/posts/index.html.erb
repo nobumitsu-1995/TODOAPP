@@ -1,0 +1,44 @@
+<h1>TODO LIST</h1>
+<div class="clock-body">
+  <div class="container-clock">
+    <div id="day"></div>
+    <div id="time"></div>
+  </div>
+</div>
+<div class="create">
+  <%= link_to('create new','/posts/new') %>
+</div>
+<div class="tab">
+  <%= link_to("締め切りあり","/posts/index") %>
+  <%= link_to("締め切りなし","/posts/index_none", {class: "clear"}) %>
+  <%= link_to("締め切り超過","/posts/index_over", {class: "clear"}) %>
+  <%= link_to("完了済みタスク","/completions/index", {class: "clear"}) %>
+</div>
+<table class="todo">
+  <tr>
+    <th class="th1">締め切り</th><th class="th2">残り時間</th><th>やること</th><th class="th4">操作</th>
+  </tr>
+  <% @posts.each do |post| %>
+    <% if post.deadline && (post.deadline - @today).to_i > 0%>
+      <tr>
+        <td><%= post.deadline.strftime("%Y-%m-%d %H:%M") %></td>
+        <td>
+          <% if ((post.deadline - @today).to_i)/60/60/24 > 1 %>
+            <%= ((post.deadline - @today).to_i)/60/60/24 %>日
+          <% elsif ((post.deadline - @today).to_i)/60/60 < 24 && ((post.deadline - @today).to_i)/60/60 >= 1 %>
+            <%= ((post.deadline - @today).to_i)/60/60 %>時間
+          <% elsif ((post.deadline - @today).to_i)/60 < 60 %>
+            <%= ((post.deadline - @today).to_i)/60 %>分
+          <% end %>
+        </td>
+        <td class="td3"><%= link_to(post.content,"/posts/#{post.id}") %></td>
+        <td class="td4">
+          <%= link_to("編集","/posts/#{post.id}/edit") %>
+          <%= link_to("削除","/posts/#{post.id}/delete",{method:"post"}) %>
+          <%= link_to("完了","/completions/#{post.id}/complete",{method:"post"}) %>
+        </td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+<%= javascript_pack_tag 'posts/index' %>

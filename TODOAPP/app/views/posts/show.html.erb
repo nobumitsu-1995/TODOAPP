@@ -1,0 +1,28 @@
+
+<div class="show">
+  <% if @post.deadline %>
+    <div class="deadline">
+      <div class="deadline-time">
+        締め切り：<%= @post.deadline.strftime("%Y-%m-%d %H:%M") %>
+      </div>
+      <div class="deadline-time">
+        <% if @deadline > 1 %>
+        残り時間：<%= @deadline %> 日
+        <% elsif @deadline < 0 %>
+        残り時間：締め切りを過ぎています！
+        <% elsif @deadlineHour < 1 %>
+        残り時間：<%= @deadlineMin %> 分
+        <% else %>
+        残り時間：<%= @deadlineHour %> 時間
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+  <p><%= @post.content %></p>
+  <ul class="show-menu cf">
+    <li><%= link_to("完了","/completions/#{@post.id}/complete",{method:"post"}) %></li>
+    <li><%= link_to("削除","/posts/#{@post.id}/delete",{method:"post"}) %></li>
+    <li><%= link_to("編集","/posts/#{@post.id}/edit") %></li>
+    <li><%= @post.created_at.strftime("%Y-%m-%d %H:%M") %></li>
+  </ul>
+</div>

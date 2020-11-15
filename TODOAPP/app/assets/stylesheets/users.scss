@@ -1,0 +1,41 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.go{
+  clear: both;
+  float: none;
+  margin-top: 10px;
+}
+
+.containar3{
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 80px;
+  background: #F0823D;
+  border: 5px solid #FF5F17;
+  border-radius: 10px;
+  width: 300px;
+  padding: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.user_menu{
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  width: 100px;
+  margin: 0 auto;
+  text-decoration: underline;
+}
+
+.user_menu a{
+  color: white;
+}
