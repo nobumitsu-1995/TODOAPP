@@ -17,7 +17,7 @@
 </div>
 <table class="todo">
   <tr>
-    <th class="th1">締め切り</th><th class="th2">超過時間</th><th>やること</th><th class="th4">操作</th>
+    <th class="th1">締め切り</th><th class="th2">超過時間</th><th class="th3">やること</th><th class="th4">操作</th>
   </tr>
   <% @posts.each do |post| %>
     <% if post.deadline && (post.deadline - @today).to_i < 0 %>

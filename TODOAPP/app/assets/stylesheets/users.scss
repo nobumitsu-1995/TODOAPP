@@ -39,3 +39,14 @@
 .user_menu a{
   color: white;
 }
+@media screen and (max-width: 480px) {
+	/* スマホ用 */
+  form{
+    width: 85%;
+    padding: 0;
+    padding: 5px;
+  }
+  .containar3{
+    width: 80%;
+  }
+}

@@ -24,7 +24,7 @@
  }
 
  header{
-   width: 100%;
+   width: 100vw;
    background: #f0823d;
    height: 70px;
    line-height: 70px;
@@ -74,4 +74,11 @@
 
 a{
   text-decoration: none;
+}
+
+@media screen and (max-width: 480px) {
+	/* スマホ用 */
+  header a{
+    font-size: 10px;
+  }
 }

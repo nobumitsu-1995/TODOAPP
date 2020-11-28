@@ -1,11 +1,12 @@
 .containar{
   background-image: image-url('top.jpg');
   background-size: cover;
-  height: 573px;
+  height: 100vh;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100vw;
 }
 
 .containar h2{
@@ -56,4 +57,35 @@
   list-style: none;
   padding: 5px 0px;
   border-bottom: 1px solid #f0e73c;
+}
+
+@media screen and (max-width: 768px) {
+	/* タブレット用 */
+}
+@media screen and (max-width: 480px) {
+	/* スマホ用 */
+  .containar h2{
+    font-size: 35px;
+    width: 90%;
+    max-width:300px;
+    margin-top: 60px;
+  }
+  .containar h3{
+    max-width:300px;
+    width: 90%;
+    font-size: 10px;
+  }
+  .wrapper{
+    border-radius: 100px;
+    height: 200px;
+  }
+  .about{
+    margin: 5px;
+  }
+  .about h4{
+    font-size: 18px;
+  }
+  .about li{
+    font-size: 15px;
+  }
 }
