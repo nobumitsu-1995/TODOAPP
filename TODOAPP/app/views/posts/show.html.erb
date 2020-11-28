@@ -6,14 +6,10 @@
         締め切り：<%= @post.deadline.strftime("%Y-%m-%d %H:%M") %>
       </div>
       <div class="deadline-time">
-        <% if @deadline > 1 %>
-        残り時間：<%= @deadline %> 日
-        <% elsif @deadline < 0 %>
-        残り時間：締め切りを過ぎています！
-        <% elsif @deadlineHour < 1 %>
-        残り時間：<%= @deadlineMin %> 分
+        <% if @deadline >= 0 %>
+          残り時間：<%= @post.define_deadline %>
         <% else %>
-        残り時間：<%= @deadlineHour %> 時間
+          残り時間：<%= @post.define_deadline %> 過ぎています！
         <% end %>
       </div>
     </div>

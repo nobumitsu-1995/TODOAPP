@@ -5,6 +5,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.where(user_id:@current_user.id).order(deadline: :asc)
+
   end
 
   def index_over
@@ -32,9 +33,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find_by(id: params[:id])
     if @post.deadline
-      @deadline = ((@post.deadline - DateTime.current).to_i)/60/60/24
-      @deadlineHour = ((@post.deadline - DateTime.current).to_i)/60/60
-      @deadlineMin = ((@post.deadline - DateTime.current).to_i)/60
+      @deadline = @post.deadline - DateTime.current
     end
   end
 

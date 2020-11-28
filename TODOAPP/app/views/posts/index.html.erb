@@ -23,13 +23,7 @@
       <tr>
         <td><%= post.deadline.strftime("%Y-%m-%d %H:%M") %></td>
         <td>
-          <% if ((post.deadline - @today).to_i)/60/60/24 > 1 %>
-            <%= ((post.deadline - @today).to_i)/60/60/24 %>日
-          <% elsif ((post.deadline - @today).to_i)/60/60 < 24 && ((post.deadline - @today).to_i)/60/60 >= 1 %>
-            <%= ((post.deadline - @today).to_i)/60/60 %>時間
-          <% elsif ((post.deadline - @today).to_i)/60 < 60 %>
-            <%= ((post.deadline - @today).to_i)/60 %>分
-          <% end %>
+          <%= post.define_deadline %>
         </td>
         <td class="td3"><%= link_to(post.content,"/posts/#{post.id}") %></td>
         <td class="td4">
