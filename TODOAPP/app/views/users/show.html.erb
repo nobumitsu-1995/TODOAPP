@@ -1,6 +1,11 @@
 <div class="containar3">
   <div class="user_img">
-    <img src="<%= "/user_image/#{@user.img}" %>" class="img">
+    <% if @user.image.attached? %>
+      <%= image_tag(@user.image,:class => "img") %>
+    <% end %>
+    <% if @user.img %>
+      <%= image_tag("/user_image/#{@user.img}", :class => "img") %>
+    <% end %>
   </div>
   <div class="user_name">
     ユーザー名：<%= @user.name %>
